@@ -1,0 +1,117 @@
+
+-- EXPERIMENT 3: DML COMMANDS
+-- INSERT AND SELECT
+
+-- CREATE DATABASE
+CREATE DATABASE IF NOT EXISTS dbms_lab;
+USE dbms_lab;
+
+-- QUESTION 1: CREATE AND POPULATE FIVE TABLES
+
+-- TABLE 1: STUDENT
+
+CREATE TABLE STUDENT (
+    RegNo INT,
+    Name VARCHAR(15),
+    Gender CHAR(1),
+    DOB DATE,
+    MobileNo BIGINT,
+    City VARCHAR(15)
+);
+
+INSERT INTO STUDENT VALUES
+(101, 'Arun', 'M', '2005-03-12', 9876543210, 'Chennai'),
+(102, 'Priya', 'F', '2005-07-25', 9876543211, 'Madurai'),
+(103, 'Rahul', 'M', '2004-11-18', 9876543212, 'Salem'),
+(104, 'Aakash', 'M', '2005-05-10', 9876543213, 'Chennai'),
+(105, 'Divya', 'F', '2005-09-22', 9876543214, 'Coimbatore');
+
+
+-- TABLE 2: FACULTY
+
+CREATE TABLE FACULTY (
+    FacNo VARCHAR(4),
+    FacName VARCHAR(15),
+    Gender CHAR(1),
+    DOB DATE,
+    DOJ DATE,
+    MobileNo BIGINT
+);
+
+INSERT INTO FACULTY VALUES
+('F001', 'Mohan', 'M', '1970-05-12', '2010-06-15', 9876543210),
+('F002', 'Priya', 'F', '1980-08-20', '2015-07-10', 9876543211),
+('F003', 'Kamal', 'M', '1975-03-18', '2012-01-05', 9876543212),
+('F004', 'Divya', 'F', '1985-11-25', '2018-08-12', 9876543213),
+('F005', 'Ravi', 'M', '1965-06-30', '2005-04-20', 9876543214);
+
+
+-- TABLE 3: DEPARTMENT
+
+CREATE TABLE DEPARTMENT (
+    DeptNo VARCHAR(4),
+    DeptName VARCHAR(15),
+    DeptHead VARCHAR(4)
+);
+
+INSERT INTO DEPARTMENT VALUES
+('D001', 'CSE', 'F001'),
+('D002', 'ECE', 'F002'),
+('D003', 'MECH', 'F003'),
+('D004', 'AERO', 'F004'),
+('D005', 'CIVIL', 'F005');
+
+
+-- TABLE 4: COURSE
+
+CREATE TABLE COURSE (
+    CourseNo VARCHAR(3),
+    CourseDesc VARCHAR(14),
+    CourseType CHAR(1),
+    SemNo CHAR(1),
+    HallNo VARCHAR(4),
+    FacNo VARCHAR(4)
+);
+
+INSERT INTO COURSE VALUES
+('C01', 'Programming', 'T', '1', 'H001', 'F001'),
+('C02', 'Statistics', 'T', '2', 'H002', 'F002'),
+('C03', 'Mathematics', 'T', '3', 'H003', 'F003'),
+('C04', 'DBMS', 'P', '4', 'H004', 'F004'),
+('C05', 'Physics', 'T', '5', 'H005', 'F005');
+
+
+-- TABLE 5: STUDENT2
+
+CREATE TABLE STUDENT2 (
+    RegNo INT,
+    S1Name VARCHAR(15),
+    Age CHAR(2),
+    MobileNo BIGINT,
+    Address VARCHAR(15)
+);
+
+INSERT INTO STUDENT2 VALUES
+(201, 'Kumar', '20', 9876543210, 'Chennai'),
+(202, 'Sneha', '19', 9876543211, 'Madurai'),
+(203, 'Ramesh', '21', 9876543212, 'Salem'),
+(204, 'Anitha', '20', 9876543213, 'Trichy'),
+(205, 'Vijay', '22', 9876543214, 'Chennai');
+
+
+-- QUESTION 2: DISPLAY ALL RECORDS
+
+SELECT * FROM STUDENT;
+
+SELECT * FROM FACULTY;
+
+SELECT * FROM DEPARTMENT;
+
+SELECT * FROM COURSE;
+
+SELECT * FROM STUDENT2;
+
+
+-- VERIFY ALL TABLES
+
+SHOW TABLES;
